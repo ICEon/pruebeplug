@@ -19,7 +19,7 @@ lla.preloadFX('assets/mario.mp3', 'assets/mario.mp3', function(msg){}, function(
 
 function play(drum) {
 document.getElementById(drum).className = 'drum touched';
-lla.play('assets/mario.mp3');
+lla.play('assets/' + drum + '.mp3');
 }
 
 function touchEnd(event) {
