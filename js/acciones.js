@@ -19,10 +19,14 @@ lla.preloadFX('mario', 'assets/mario.mp3', function(msg){}, function(msg){ alert
 
 function play(drum) {
 document.getElementById(drum).className = 'drum touched';
-lla.play('mario');
+//lla.play('mario');
 }
 
 function touchEnd(event) {
 event.target.className = 'drum';
 }
 
+  $('#mario').tap(function(e){	
+  lla.play('mario');
+  alert ('here');
+  });
