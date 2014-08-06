@@ -1,22 +1,25 @@
 //JavaScript
 	var audio;
 $(document).ready(function(e){
-	if (window.plugins&&window.plugins.LowLatencyAudio)
+document.addEventListener("deviceready",function(){	
+/*	if (window.plugins&&window.plugins.LowLatencyAudio)
 	
 	audio=window.plugins.LowLatencyAudio;
 	audio.preloadFX('mario','audio/mario.mp3', function(msg){},
 	    function(msg){alert('error: ' +msg);});
-
-    $('#Beep').click(
+*/
+    $('#Beep').bind( "tap",
 function(e){
 	navigator.notification.beep(1);
   });//click Beep
-   $('#Vibrar').click(
+   $('#Vibrar').bind( "tap",
 function(e){
 	navigator.notification.vibrate(1000);
   });//click Vibrar
-    $('#Play').click(
+    $('#Play').bind( "tap",
 function(e){
-	audio.play('mario');
+		navigator.notification.vibrate(1000);
+//	audio.play('mario');
   });//click Vibrar
+  });
 });//ready
