@@ -1,25 +1,32 @@
-//JavaScript
-	var audio;
-$(document).ready(function(e){
-document.addEventListener("deviceready",function(){	
-/*	if (window.plugins&&window.plugins.LowLatencyAudio)
-	
-	audio=window.plugins.LowLatencyAudio;
-	audio.preloadFX('mario','audio/mario.mp3', function(msg){},
-	    function(msg){alert('error: ' +msg);});
+// JavaScript Document
+var lla;
+
+function onBodyLoad() {	
+document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+if( window.plugins && window.plugins.LowLatencyAudio ) {
+
+lla = window.plugins.LowLatencyAudio;	
+
+lla.preloadFX('assets/bass.mp3', 'assets/bass.mp3', function(msg){}, function(msg){ alert( 'Error: ' + msg ); });
+lla.preloadFX('assets/snare.mp3', 'assets/snare.mp3', function(msg){}, function(msg){ alert( 'Error: ' + msg ); });
+lla.preloadFX('assets/highhat.mp3', 'assets/highhat.mp3', function(msg){}, function(msg){ alert( 'Error: ' + msg ); });
+lla.preloadFX('mario', 'assets/mario.mp3', function(msg){}, function(msg){ alert( 'Error: ' + msg ); });	
+}
+}
+
+function play(drum) {
+document.getElementById(drum).className = 'drum touched';
+//lla.play('mario');
+}
+/*
+function touchEnd(event) {
+event.target.className = 'drum';
+}
 */
-    $('#Beep').bind( "tap",
-function(e){
-	navigator.notification.beep(1);
-  });//click Beep
-   $('#Vibrar').bind( "tap",
-function(e){
-	navigator.notification.vibrate(1000);
-  });//click Vibrar
-    $('#Play').bind( "tap",
-function(e){
-		navigator.notification.vibrate(1000);
-//	audio.play('mario');
-  });//click Vibrar
+  $('#mario').tap(function(e){	
+//  lla.play('mario');
+  alert ('here');
   });
-});//ready
