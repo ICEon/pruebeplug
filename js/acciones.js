@@ -13,7 +13,7 @@ lla = window.plugins.LowLatencyAudio;
 lla.preloadFX('assets/bass.mp3', 'assets/bass.mp3', function(msg){}, function(msg){ alert( 'Error: ' + msg ); });
 lla.preloadFX('assets/snare.mp3', 'assets/snare.mp3', function(msg){}, function(msg){ alert( 'Error: ' + msg ); });
 lla.preloadFX('assets/highhat.mp3', 'assets/highhat.mp3', function(msg){}, function(msg){ alert( 'Error: ' + msg ); });
-lla.preloadFX('mario', 'assets/mario.mp3', function(msg){}, function(msg){ alert( 'Error: ' + msg ); });	
+lla.preloadFX('assets/mario.mp3', 'mario', function(msg){}, function(msg){ alert( 'Error: ' + msg ); });	
 }
 }
 
